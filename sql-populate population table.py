@@ -16,7 +16,7 @@ with sqlite3.connect("new.db") as conn:
         ('Austin', 'TX', 800000),
         ('Detroit', 'MI', 700000)
         ]
-    cur.executemany("""INSERT INTO population VALUES(?, ?, ?)""", cities)
+    cur.executemany("""INSERT OR IGNORE INTO population VALUES(?, ?, ?)""", cities)
     cur.execute("""SELECT * FROM population WHERE population > 1000000""")
     for r in cur.fetchall():
         print(r[0], r[1], r[2])
