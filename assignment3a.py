@@ -8,7 +8,7 @@ with sqlite3.connect("newnum.db") as conn:
 
     cur.execute("""DROP TABLE IF EXISTS numbers""")
     # create table numbers
-    cur.execute("""CREATE TABLE IF NOT EXISTS numbers (numbers INT)""")
+    cur.execute("""CREATE TABLE numbers (numbers INT)""")
 
     for i in list(range(100)):
         # generate random number
